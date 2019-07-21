@@ -239,6 +239,8 @@ bin/terraform
 ### Vagrant ###
 .vagrant/
 
+data/*
+!data/.gitkeep
 
 # End of https://www.gitignore.io/api/linux,macos,packer,python,vagrant,terraform,powershell,intellij+all
 
