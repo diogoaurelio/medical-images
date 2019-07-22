@@ -14,16 +14,16 @@ PYTHON_VERSION ?= 3
 
 venv: requirements.txt ## Create python virtual env
 	test -d venv || python -m virtualenv venv --python=python$(PYTHON_VERSION)
-	. venv/bin/activate; pip install --requirement requirements.txt
+	@. venv/bin/activate; pip install --requirement requirements.txt
 
 py: venv ## Activate python venv
-	. venv/bin/activate; python
+	@. venv/bin/activate; python
 
 py_update: venv ## Activate python venv
-	. venv/bin/activate; pip install --requirement requirements.txt
+	@. venv/bin/activate; pip install --requirement requirements.txt
 
 py_lint: venv ## Run lint for python code
-	. venv/bin/activate; pycodestyle ./python/src
+	@. venv/bin/activate; pycodestyle ./python/src
 
 py_test: venv ## Run python test suite
 	@export PYTHONPATH=$(PYTHONPATH):$(PWD)/python/src && pytest tests

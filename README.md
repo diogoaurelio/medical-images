@@ -39,6 +39,25 @@ source venv/bin/activate
 pip3 install -e .
 ```
 
+
+To use the OpenSlide Python interface to view whole slide images, we are using a script provided in openslide-python repo to use the DeepZoom deepzoom_multiserver.py script.
+```bash
+git clone https://github.com/openslide/openslide-python.git
+```
+
+Since we already have copied this script:
+```bash
+# install dependencies
+sudo apt-get install openslide-tools
+sudo apt-get install python-openslide
+
+make py_update
+source venv/bin/activate
+python openslide/deepzoom_multiserver.py -Q 100 ./data/
+```
+
+This approach was taken from [IBM blog post Whole-slide image processing in python](https://developer.ibm.com/articles/an-automatic-method-to-identify-tissues-from-big-whole-slide-images-pt1/).
+
 ## Reference sources
 
 Here is a collection of materials (blog articles, papers, code repositories, forum threads, etc.) that I found helpful while working on this project:

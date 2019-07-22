@@ -1,7 +1,12 @@
-
-
 numpy
 scipy
+Pillow
+scikit-image
+scikit-learn
+
+# OpenSlide dependencies
+openslide-python
+flask
 
 # For tests
 testfixtures==5.3.1
